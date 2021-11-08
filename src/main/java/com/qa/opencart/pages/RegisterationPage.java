@@ -25,15 +25,15 @@ public class RegisterationPage {
 	private By sucessMessg = By.cssSelector("div#content h1");
 
 	private By logoutLink = By.linkText("Logout");
-	private By registerLink = By.linkText("Register");
+	//private By registerLink = By.linkText("Register"); Register
+	private By   registerLink=By.xpath("(*//a[contains(text(),'Register')])[2]");
 
 	public RegisterationPage(WebDriver driver) {
 		elementUtil = new ElementUtil(driver);
 	}
 
-	public boolean registration(String firstName, String lastName,
-									String email, String telephone, String password,
-										String subsribe) {
+	public boolean registration(String firstName, String lastName, String email, String telephone, String password,
+			String subsribe) {
 
 		fillRegForm(firstName, lastName, email, telephone, password);
 		selectSubscritionOption(subsribe);
